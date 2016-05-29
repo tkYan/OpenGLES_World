@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="xxj-fb-4Uk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xxj-fb-4Uk">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Plane Controller-->
         <scene sceneID="d2C-b4-GCV">
             <objects>
                 <viewController id="xxj-fb-4Uk" customClass="GLPlaneController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pZ9-XA-9Tr"/>
+                        <viewControllerLayoutGuide type="bottom" id="YJD-gC-9z1"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ywr-jO-Hce" customClass="GLKView">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="8hz-PQ-qXV">
-                                <rect key="frame" x="60" y="935" width="180" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <segments>
-                                    <segment title="Sphere"/>
-                                    <segment title="Plane"/>
-                                </segments>
-                                <connections>
-                                    <action selector="switchShapes:" destination="xxj-fb-4Uk" eventType="valueChanged" id="zPM-up-jM1"/>
-                                </connections>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="sz6-t3-Xqe">
-                                <rect key="frame" x="528" y="935" width="180" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sz6-t3-Xqe">
+                                <rect key="frame" x="352" y="509" width="180" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="3qW-0y-AhO"/>
+                                    <constraint firstAttribute="width" constant="180" id="pk8-34-ZxG"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Path"/>
                                     <segment title="Bar"/>
@@ -34,18 +32,65 @@
                                     <action selector="switchMetrics:" destination="xxj-fb-4Uk" eventType="valueChanged" id="392-ep-CYK"/>
                                 </connections>
                             </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8hz-PQ-qXV">
+                                <rect key="frame" x="82" y="509" width="180" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="fXF-uQ-vii"/>
+                                    <constraint firstAttribute="height" constant="28" id="uUM-wE-Ses"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Sphere"/>
+                                    <segment title="Plane"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchShapes:" destination="xxj-fb-4Uk" eventType="valueChanged" id="zPM-up-jM1"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="sz6-t3-Xqe" secondAttribute="trailing" constant="60" id="1Vc-BO-F1g"/>
+                            <constraint firstItem="8hz-PQ-qXV" firstAttribute="leading" secondItem="ywr-jO-Hce" secondAttribute="leadingMargin" constant="60" id="74f-Tm-F5Z"/>
+                            <constraint firstItem="YJD-gC-9z1" firstAttribute="top" secondItem="sz6-t3-Xqe" secondAttribute="bottom" constant="60" id="Bva-iv-BeI"/>
+                            <constraint firstItem="sz6-t3-Xqe" firstAttribute="centerX" secondItem="ywr-jO-Hce" secondAttribute="centerX" id="Fw5-ax-zJ4"/>
+                            <constraint firstItem="8hz-PQ-qXV" firstAttribute="centerX" secondItem="ywr-jO-Hce" secondAttribute="centerX" id="GGO-7a-2iE"/>
+                            <constraint firstItem="sz6-t3-Xqe" firstAttribute="top" secondItem="8hz-PQ-qXV" secondAttribute="bottom" constant="20" id="axI-f3-43F"/>
+                            <constraint firstItem="YJD-gC-9z1" firstAttribute="top" secondItem="sz6-t3-Xqe" secondAttribute="bottom" constant="20" id="xLt-11-F1u"/>
+                            <constraint firstItem="YJD-gC-9z1" firstAttribute="top" secondItem="8hz-PQ-qXV" secondAttribute="bottom" constant="60" id="zOd-ji-wVr"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="74f-Tm-F5Z"/>
+                                <exclude reference="GGO-7a-2iE"/>
+                                <exclude reference="1Vc-BO-F1g"/>
+                                <exclude reference="Fw5-ax-zJ4"/>
+                                <exclude reference="axI-f3-43F"/>
+                                <exclude reference="Bva-iv-BeI"/>
+                                <exclude reference="xLt-11-F1u"/>
+                                <exclude reference="zOd-ji-wVr"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="GGO-7a-2iE"/>
+                                <include reference="Fw5-ax-zJ4"/>
+                                <include reference="axI-f3-43F"/>
+                                <include reference="xLt-11-F1u"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="74f-Tm-F5Z"/>
+                                <include reference="1Vc-BO-F1g"/>
+                                <include reference="Bva-iv-BeI"/>
+                                <include reference="zOd-ji-wVr"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K3v-sN-39Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-254" y="-235"/>
+            <point key="canvasLocation" x="-198.4375" y="-137.6953125"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="lightContent"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
-    </simulatedMetricsContainer>
 </document>
