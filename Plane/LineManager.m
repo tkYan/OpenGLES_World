@@ -188,7 +188,7 @@
     glVertexAttribPointer(GLKVertexAttribColor, 4, GL_FLOAT, GL_FALSE, 0, NULL);
     
     for (NSUInteger i = 0; i < numOfLines; ++i) {
-        glDrawArrays(GL_LINE_STRIP, i * (NUM_OF_POINTS_IN_ONE_LINE), NUM_OF_POINTS_IN_ONE_LINE);
+        glDrawArrays(GL_LINE_STRIP, (GLint)i * (NUM_OF_POINTS_IN_ONE_LINE), NUM_OF_POINTS_IN_ONE_LINE);
     }
     
     glDisableVertexAttribArray(GLKVertexAttribColor);

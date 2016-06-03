@@ -174,7 +174,7 @@
     glEnableVertexAttribArray(GLKVertexAttribColor);
     glVertexAttribPointer(GLKVertexAttribColor, 4, GL_FLOAT, GL_FALSE, 0, NULL);
     
-    glDrawArrays(GL_LINES, 0, numOfVertices);
+    glDrawArrays(GL_LINES, 0, (GLsizei)numOfVertices);
     
     glDisableVertexAttribArray(GLKVertexAttribColor);
 

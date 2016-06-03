@@ -219,7 +219,7 @@
     
     // Indices
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indicesBuffer);
-    glDrawElements(GL_TRIANGLES, numOfIndice, GL_UNSIGNED_SHORT, NULL);
+    glDrawElements(GL_TRIANGLES, (GLsizei)numOfIndice, GL_UNSIGNED_SHORT, NULL);
     
     glDisableVertexAttribArray(GLKVertexAttribTexCoord0);
 }

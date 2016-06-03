@@ -276,7 +276,7 @@
     
     // Indices
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
-    glDrawElements(GL_TRIANGLES, 6 * numOfParticles, GL_UNSIGNED_SHORT, NULL);
+    glDrawElements(GL_TRIANGLES, 6 * (GLsizei)numOfParticles, GL_UNSIGNED_SHORT, NULL);
     
     glDisableVertexAttribArray(GLKVertexAttribColor);
     glDisableVertexAttribArray(GLKVertexAttribTexCoord0);
